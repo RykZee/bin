@@ -18,11 +18,14 @@ echo "Setting up bash_profile"
 touch ~/.bash_profile
 echo "alias l='ls -GAF'" >> ~/.bash_profile
 echo "alias ll='ls -FlAG'" >> ~/.bash_profile
+echo "alias reloadsh='source ~/.bash_profile'" >> ~/.bash_profile
 echo "alias subl='open -a Sublime\ Text'" >> ~/.bash_profile
 echo "alias code='open -a Visual\ Studio\ Code'" >> ~/.bash_profile
 echo "alias charm='open -a PyCharm'" >> ~/.bash_profile
 
 echo "# Setting the bash prompt" >> ~/.bash_profile
+echo "# parse_git_branch returns current git repo otherwise empty string" >> ~/.bash_profile
+echo "parse_git_branch() {git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'}" >> ~/.bash_profile
 echo "export PS1='\[\e[32m\]\W \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ '" >> ~/.bash_profile
 source ~/.bash_profile
 
