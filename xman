@@ -1,0 +1,15 @@
+#!/usr/local/bin/bash
+
+# A short script for a better man page reading experience
+# on macOS.
+# Script is from Collin Donnell:
+# https://www.collindonnell.com/2020/03/03/script-for-better.html
+
+for i in "$@"; do
+  if [ $(command -v $i) ]
+  then
+    open x-man-page://$i
+  else
+    printf "Can't find command: %s\n" "$i" >&2
+  fi
+done
