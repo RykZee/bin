@@ -1,0 +1,15 @@
+#!/usr/local/bin/bash
+
+# A simple short script for easier git commit with message
+# A word of caution that some characters that are interpreted
+# by the shell must be escaped such as apostrophe
+# e.g `gcm I\'m committing some files`
+
+MESSAGE=""
+
+for word in "$@"
+do
+   MESSAGE+="${word} "
+done
+
+git commit -m "${MESSAGE%?}"
