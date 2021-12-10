@@ -30,3 +30,6 @@ echo "export PS1='\[\e[32m\]\W \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ '" >> ~
 source ~/.bash_profile
 
 # WIP...
+# TODO: Install brew etc
+# TODO: Set up VIM
+# TODO: Set up git
